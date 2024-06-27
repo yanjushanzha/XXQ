@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>寻味之旅：探寻八大菜系</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar {
+    background-color: #8B4513;
+    overflow: hidden;
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: space-between; /* 均匀分布 */
+    align-items: center; /* 垂直居中 */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* 保持在最前面 */
+  }
+  .navbar a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 17px;
+    opacity: 0.6; /* 默认状态下的透明度 */
+  }
+  .navbar a.current {
+    opacity: 1; /* 高亮状态下的透明度 */
+    font-weight: bold; /* 加粗当前链接文本 */
+  }
+  .navbar a:hover {
+    background-color: #A0522D; /* 鼠标悬停时的背景颜色 */
+  }
+
+  /* 新增侧导航栏样式 */
+  .sidebar {
+    background-color: #D2B48C;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100px; /* 侧导航栏宽度 */
+    height: 100%; /* 撑满整个屏幕 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .sidebar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
+  .sidebar a:hover {
+    opacity: 1;
+    background-color: #B8860B;
+  }
+</style>
+</head>
+<body>
+
+<!-- 主导航栏 -->
+<div class="navbar">
+  <a href="section1.html">返回</a>
+  <a href="section2.html">起源发展</a>
+  <a href="section3.html">详细</a>
+  <a href="section4.html">菜品制作</a>
+</div>
+
+<!-- 左侧竖向导航栏 -->
+<div class="sidebar">
+  <a href="section2.html">起源</a>
+  <a href="section2.html#development">发展</a>
+</div>
+
+<!-- 主内容区域 -->
+<div style="margin-left: 100px; padding: 20px;">
+
+</div>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // 获取当前页面的URL路径
+  var currentUrl = window.location.href;
+
+  // 获取主导航栏中所有链接元素
+  var navLinks = document.querySelectorAll(".navbar a");
+
+  // 遍历主导航栏中的链接元素
+  navLinks.forEach(function(link) {
+    // 如果当前链接的href属性与当前页面的URL路径匹配
+    if (link.href === currentUrl) {
+      // 添加一个特殊的类名 'current'
+      link.classList.add("current");
+    }
+  });
+
+  // 获取侧导航栏中所有链接元素
+  var sidebarLinks = document.querySelectorAll(".sidebar a");
+
+  // 遍历侧导航栏中的链接元素
+  sidebarLinks.forEach(function(link) {
+    // 如果当前链接的href属性与当前页面的URL路径匹配
+    if (link.href === currentUrl) {
+      // 添加一个特殊的类名 'current'
+      link.classList.add("current");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
